@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ambientinformatica.com.br/jsf2"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="corpo">
+
+		<h:form id="form">
+			<p:panel id="panel" header="Formulario Unidade De Medida"
+				style="margin-bottom:10px;">
+				<p:messages id="messages" />
+				<h:panelGrid columns="3" cellpadding="5">
+					<p:outputLabel for="descricao" value="Descrição:" />
+					<p:inputText id="descricao" value="#{resetInputView.descricao}"
+						required="true" placeholder="Insira a Descrição">
+						<f:validateLength minimum="2" />
+					</p:inputText>
+					<p:message for="descricao" />
+
+					<p:outputLabel for="sigla" value="Sigla:" />
+					<p:inputText id="sigla" value="#{resetInputView.sigla}"
+						required="true" placeholder="Insira a Sigla		" />
+					<p:message for="sigla" />
+				</h:panelGrid>
+			</p:panel>
+
+			<p:toolbar>
+				<f:facet name="left">
+					<p:commandButton value="Salvar" update="panel"
+						actionListener="#{resetInputView.save}" style="margin-right:20px;" />
+					<p:commandButton value="Limpar" update="panel"
+						actionListener="#{resetInputView.save}" style="margin-right:20px;" />
+				</f:facet>
+
+				<f:facet name="right">
+
+				</f:facet>
+			</p:toolbar>
+		</h:form>
+	</ui:define>
+</ui:composition>

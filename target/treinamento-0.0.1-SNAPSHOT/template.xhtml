@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:ui="http://java.sun.com/jsf/facelets" 
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:a="http://www.ambientinformatica.com.br/jsf2">
+
+<h:head>
+	<title>Kyklos</title>
+	<link href="css/styles.css" type="text/css" rel="stylesheet" />
+	<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+	<link href="css/kyklos.css" type="text/css" rel="stylesheet" />
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+	<link href="css/bootstrap-responsive.css" type="text/css" rel="stylesheet" />
+	<script src="js/kyklos.js" />
+	<ui:insert name="cabecalho" />
+</h:head>
+
+<h:body style="margin: 0px;">
+	<div id="pagewrapper">
+
+		<ui:include src="/menuTopo.xhtml"/>
+
+		<h:form id="formCorpo">
+			<p:messages autoUpdate="true" closable="true" />
+			<ui:include src="/menuUsuario.xhtml"/>
+
+			<p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+				<p:graphicImage url="imagens/ajax.gif" />
+			</p:dialog>
+
+			<div id="main-content" style="width: 100%">
+				<ui:insert name="corpo" />
+			</div>
+
+			<!-- <ui:include src="/menuRodape.jspx"/>  -->
+
+		</h:form>
+	</div>
+</h:body>
+</html>
